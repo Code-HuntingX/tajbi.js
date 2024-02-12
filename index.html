@@ -1,11 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500;700&display=swap" rel="stylesheet">
 </head>
+    <style>
+        main{
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
 <body>
-   <p>we are going</p> 
+    <main class="container lg:mx-auto lg:px-auto px-5">
+        <section class="grid lg:grid-cols-3 grid-cols-1 gap-5 text-center lg:mt-40 mt-10">
+            <div class="bg-green-300 p-10 rounded-lg">
+                <h5 class="text-xl pb-3">SubhanAllah</h5>
+                <p id="display-count"
+                    class="pb-3 pt-3 text-xl text-green-700 bg-white w-[53px] mx-auto rounded-full text-center justify-center">
+                    0</p>
+                <div class="pt-5 space-x-8">
+                    <button class="btn btn-accent bg-blue-500 text-yellow-100" id="btn-in">Increment</button>
+                    <button class="btn btn-secondary" id="btn-de">Secondary</button>
+                </div>
+            </div>
+            <div class="bg-lime-400 p-10 rounded-lg">
+                <h5 class="text-xl pb-3">Alhamdulillah</h5>
+                <p id="adisplay-count"
+                    class="pb-3 pt-3 text-xl text-green-700 bg-white w-[53px] mx-auto rounded-full text-center justify-center">
+                    0</p>
+                    <div class="pt-5 space-x-8">
+                        <button class="btn btn-accent" id="abtn-in">Increment</button>
+                        <button class="btn btn-secondary" id="abtn-de">Secondary</button>
+                    </div>
+            </div>
+            <div class="bg-blue-600 p-10 rounded-lg">
+                <h5 class="text-xl pb-3 text-white">AllhuAkber</h5>
+                <p id="aadisplay-count"
+                    class="pb-3 pt-3 text-xl text-green-700 bg-white w-[53px] mx-auto rounded-full text-center justify-center">
+                    0</p>
+                    <div class="pt-5 space-x-8">
+                        <button class="btn btn-accent" id="aabtn-in">Increment</button>
+                        <button class="btn btn-secondary" id="aabtn-de">Secondary</button>
+                    </div>
+            </div>
+
+        </section>
+        <div class="flex justify-center mt-10 mb-10">
+            <button id="reset-btn" class="btn btn-warning hover:bg-red-600 hover:text-white">Reset</button>
+        </div>
+    </main>
+
+    <script>
+
+        const displayCount = document.getElementById('display-count');
+        const increment = document.getElementById('btn-in');
+        const decrement = document.getElementById('btn-de');
+
+        const adisplayCount = document.getElementById('adisplay-count');
+        const aincrement = document.getElementById('abtn-in');
+        const adecrement = document.getElementById('abtn-de');
+
+        const aadisplayCount = document.getElementById('aadisplay-count');
+        const aaincrement = document.getElementById('aabtn-in');
+        const aadecrement = document.getElementById('aabtn-de');
+
+        let value1 = 0;
+        let value2 = 0;
+        let value3 = 0;
+
+        increment.addEventListener('click', function () {
+            if (value1 >= 33) {
+                return alert("complete. go to next")
+            }
+            value1 += 1;
+            displayCount.innerText = value1;
+
+        })
+        decrement.addEventListener('click', function () {
+            if (value1 <= 0) {
+                return alert("negative mark")
+            }
+            value1 -= 1;
+            displayCount.innerText = value1;
+
+        })
+        //---------------------------------
+        aincrement.addEventListener('click', function () {
+            if (value2 >= 33) {
+                return alert("Complete. go to next")
+            }
+            value2 += 1;
+            adisplayCount.innerText = value2;
+
+        })
+        adecrement.addEventListener('click', function () {
+            if (value2 <= 0) {
+                return alert("negative mark")
+            }
+            value2 -= 1;
+            adisplayCount.innerText = value2;
+
+        })
+        //--------------------------------------
+        aaincrement.addEventListener('click', function () {
+            if (value3 >= 34) {
+                return alert("You're complete")
+            }
+            value3 += 1;
+            aadisplayCount.innerText = value3;
+
+        })
+        aadecrement.addEventListener('click', function () {
+            if (value3 <= 0) {
+                return alert("negative mark")
+            }
+            value3 -= 1;
+            aadisplayCount.innerText = value3;
+
+        })
+
+        const resetBtn = document.getElementById('reset-btn');
+        resetBtn.addEventListener('click', function () {
+            displayCount.innerText = '0';
+            adisplayCount.innerText = '0';
+            aadisplayCount.innerText = '0';
+            value1 = 0;
+            value2 = 0;
+            value3 = 0;
+        })
+    </script>
 </body>
+
 </html>
